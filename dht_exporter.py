@@ -14,7 +14,7 @@ g_humidity = Gauge('dht_humidity', 'Humidity in percents provided by dht sensor 
 def update_sensor_data(gpio_pin, room):
     """Get sensor data and sleep."""
     # get sensor data from gpio pin provided in the argument
-    humidity, temperature = Adafruit_DHT.read_retry(Adafruit_DHT.AM2302, gpio_pin)
+    humidity, temperature =  Adafruit_DHT.read_retry(Adafruit_DHT.DHT11, 4)
     if humidity is not None and temperature is not None:
         if abs(temperature) < 100:     #If sensor returns veird value ignore it and wait for the next one 
             g_temperature.labels(room).set('{0:0.1f}'.format(temperature))
