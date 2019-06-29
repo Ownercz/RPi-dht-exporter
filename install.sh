@@ -7,7 +7,7 @@ fail () {
 
 ## Python 2:
 sudo apt-get update
-sudo apt-get install python-pip python-prometheus-client
+sudo apt-get install python-pip python-prometheus-client python3-dev python-dev
 retVal=$?
 if [ $retVal -ne 0 ]; then
     fail "Error installing python-pip python-prometheus-client" $retVal
